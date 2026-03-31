@@ -7,7 +7,6 @@ public class Item {
 
     private Product product;
     private Integer quantity;
-
     
 
     public Item() {
@@ -28,6 +27,8 @@ public class Item {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
+    public Integer getTotalPrice() {
+        return quantity * product.getPrice();
+    }
     
 }

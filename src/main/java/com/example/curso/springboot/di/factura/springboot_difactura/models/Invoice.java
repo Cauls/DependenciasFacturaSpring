@@ -38,7 +38,15 @@ public class Invoice {
     public void setItems(List<Item> items) {
         this.items = items;
     }
-    
+    public Integer getTotalPrice(){
+        Integer totalPrice = 0;
+        // for(Item i : items){
+        //     totalPrice += i.getTotalPrice();
+        // }
+        totalPrice = items.stream().map(item -> item.getTotalPrice())
+        .reduce(0, (sum, importe) -> sum + importe);
+        return totalPrice;
+    }
     
 
     
