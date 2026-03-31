@@ -15,7 +15,7 @@ import com.example.curso.springboot.di.factura.springboot_difactura.models.Produ
 public class AppConfig {
 
     @Bean
-    List<Item> itemsInvoice(){
+    List<Item> items(){
         Product p1 = new Product("Camara sony", 800);
         Product p2 = new Product("Bicicleta Bianchi 26", 1200);
         return Arrays.asList(new Item(p1, 2), new Item(p2, 3));

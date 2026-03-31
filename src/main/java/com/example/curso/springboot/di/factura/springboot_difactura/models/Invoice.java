@@ -16,7 +16,7 @@ public class Invoice {
     private String description;
 
     @Autowired
-    private List<Item> itemsInvoice;
+    private List<Item> items;
 
     public Invoice() {
     }
@@ -32,12 +32,13 @@ public class Invoice {
     public void setDescription(String description) {
         this.description = description;
     }
-    public List<Item> getItemsInvoice() {
-        return itemsInvoice;
+    public List<Item> getItems() {
+        return items;
     }
-    public void setItemsInvoice(List<Item> itemsInvoice) {
-        this.itemsInvoice = itemsInvoice;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
+    
     
 
     
