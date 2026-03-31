@@ -11,11 +11,15 @@ public class Invoice {
 
     @Autowired
     private Client client;
+
     @Value("${invoice.description}")
     private String description;
-    @Autowired
-    private List<Item> items;
 
+    @Autowired
+    private List<Item> itemsInvoice;
+
+    public Invoice() {
+    }
     public Client getClient() {
         return client;
     }
@@ -28,12 +32,13 @@ public class Invoice {
     public void setDescription(String description) {
         this.description = description;
     }
-    public List<Item> getItems() {
-        return items;
+    public List<Item> getItemsInvoice() {
+        return itemsInvoice;
     }
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setItemsInvoice(List<Item> itemsInvoice) {
+        this.itemsInvoice = itemsInvoice;
     }
+    
 
     
 }

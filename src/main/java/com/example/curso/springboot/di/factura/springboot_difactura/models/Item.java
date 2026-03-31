@@ -1,5 +1,8 @@
 package com.example.curso.springboot.di.factura.springboot_difactura.models;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Item {
 
     private Product product;

@@ -18,9 +18,7 @@ public class AppConfig {
     List<Item> itemsInvoice(){
         Product p1 = new Product("Camara sony", 800);
         Product p2 = new Product("Bicicleta Bianchi 26", 1200);
-        List<Item> items = Arrays.asList(new Item(p1, 2), new Item(p2, 3));
-
-        return items;
+        return Arrays.asList(new Item(p1, 2), new Item(p2, 3));
     }    
 
 }
