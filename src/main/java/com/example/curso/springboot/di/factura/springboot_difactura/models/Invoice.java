@@ -6,17 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
+import com.fasterxml.jackson.annotation.JsonSerializeAs;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 
+
 @Component
+@RequestScope
+@JsonSerializeAs(Invoice.class)
 public class Invoice {
 
     @Autowired
     private Client client;
 
-    @Value("${invoice.description}")
+    @Value("${invoice.description.office}")
     private String description;
 
     @Autowired
@@ -27,7 +33,7 @@ public class Invoice {
     public void init(){
         System.out.println("Creando el componente de la factura");
         client.setName(client.getName().concat(" Pepe"));
-        description = description.concat(" del cliente: ").concat(client.getName());
+        setDescription(description.concat(" pedido de: ").concat(client.getName()));
     }
 
     @PreDestroy
@@ -55,6 +61,7 @@ public class Invoice {
     public void setItemsInvoice(List<Item> items) {
         this.itemsInvoice = items;
     }
+    
     public Integer getTotalPrice(){
         Integer totalPrice = 0;
         // for(Item i : items){
